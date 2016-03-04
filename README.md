@@ -51,7 +51,7 @@ end
 
 ### Rendering Labels
 
-Pass in a width, height, dpmm (or set defaults in your configuration block) and a ZPL string to have it rendered as a PNG or PDF.
+Pass in a `width`, `height`, `dpmm` (or set defaults in your configuration block) and a ZPL string to have it rendered as a PNG or PDF.
 
 ```ruby
 Labelary::Label.render zpl: '^XA^FDHello World^FS^XZ', content_type: 'image/png', dpmm: 8, width: 6, height: 4

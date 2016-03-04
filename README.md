@@ -1,5 +1,7 @@
 # Labelary
 
+[![Gem Version](https://badge.fury.io/rb/labelary.svg)](https://badge.fury.io/rb/labelary)
+
 Labelary ZPL (Zebra Printer Language) Web Service API Client for Ruby.
 
 **Features:**

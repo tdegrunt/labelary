@@ -9,6 +9,7 @@ Labelary ZPL (Zebra Printer Language) Web Service API Client for Ruby.
 * Render ZPL strings as PNG or PDF.
 * Encode images to ZPL.
 * Global configuration or per-request.
+* Helper method for including fonts.
 
 Web service details and instructions: http://labelary.com/service.html
 
@@ -72,6 +73,18 @@ end
 # elsewhere e.g. lib/label_render.rb
 Labelary::Label.render zpl: '^XA^FDHello World^FS^XZ'
 #> PDF blob
+```
+
+#### Fonts
+
+Fonts can be included automatically via config, or per request, using the `font` argument. To do this pass in the correctly formatted `^DU` command as a string.
+
+For example if you've got a Zebra font package such as [Swiss 721](https://support.zebra.com/cpws/docs/fonts/DownloadSwiss721.htm)
+
+You also need to configure fonts.
+
+```ruby
+Labelary::Label.render zpl: '^XA^A@,,,E:TT0003M_.FNT^FDHello World^FS^XZ', font: File.read('./swiss-721-font/77849_002.ZSU')
 ```
 
 ### ZPL Encoding Images

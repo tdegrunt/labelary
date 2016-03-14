@@ -20,6 +20,7 @@ module Labelary
       :height,
       :index,
       :content_type,
+      :font
     ]
 
     def initialize
@@ -30,6 +31,7 @@ module Labelary
       @height       = nil
       @index        = 0
       @content_type = 'image/png'
+      @font         = nil
     end
 
   end

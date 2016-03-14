@@ -109,7 +109,6 @@ Labelary.configure do |config|
   config.dpmm   = 8
   config.width  = 6
   config.height = 4
-  config.content_type = 'image/png'
 end
 
 # config/initializers/mime_types.rb

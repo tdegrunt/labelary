@@ -87,6 +87,8 @@ You also need to configure fonts.
 Labelary::Label.render zpl: '^XA^A@,,,E:TT0003M_.FNT^FDHello World^FS^XZ', font: File.read('./swiss-721-font/77849_002.ZSU')
 ```
 
+There is also a helper method, `Labelary.font` to grab your configured font string.
+
 ### ZPL Encoding Images
 
 Pass in an image (or an IO object) and it's mime type and you'll get back a ZPL encoded version.

@@ -20,9 +20,13 @@ module Labelary
 
     # http://labelary.com/service.html
     def render
-      payload = @font.present? ? @font.to_s + @zpl : @zpl
+      payload = font_string + @zpl
       response = Labelary::Client.connection.post "/v1/printers/#{@dpmm}dpmm/labels/#{@width}x#{@height}/#{@index}/", payload, { Accept: @content_type }
       return response.body
+    end
+
+    def font_string
+      @font.present? ? @font.to_s : ''
     end
 
     private

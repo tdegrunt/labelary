@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Labelary
   class Image
     def self.encode(*args)
-      self.new(*args).encode
+      new(*args).encode
     end
 
-    def initialize(path:nil, mime_type:, filename:nil, file_io:nil)
+    def initialize(path: nil, mime_type:, filename: nil, file_io: nil)
       if path.present?
         @file = Faraday::UploadIO.new path, mime_type
       elsif file_io.present? && filename.present?
@@ -19,8 +21,7 @@ module Labelary
       response = Labelary::Client.connection.post '/v1/graphics', { file: @file }, { Accept: 'application/json' }
       image = response.body
 
-      return '^GFA,' + image['totalBytes'].to_s + ',' + image['totalBytes'].to_s + ',' + image['rowBytes'].to_s + ',' + image['data'] + '^FS'
+      '^GFA,' + image['totalBytes'].to_s + ',' + image['totalBytes'].to_s + ',' + image['rowBytes'].to_s + ',' + image['data'] + '^FS'
     end
-
   end
 end

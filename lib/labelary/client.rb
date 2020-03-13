@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Labelary
   class Client
     def self.connection(*args)
-      self.new(*args).connection
+      new(*args).connection
     end
 
     def connection
@@ -18,6 +20,5 @@ module Labelary
     def config
       @config ||= Labelary.configuration
     end
-
   end
 end

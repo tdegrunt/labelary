@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Labelary
   class << self
     attr_accessor :configuration
@@ -12,16 +14,7 @@ module Labelary
   end
 
   class Configuration
-    attr_accessor *[
-      :url,
-      :http_adapter,
-      :dpmm,
-      :width,
-      :height,
-      :index,
-      :content_type,
-      :font
-    ]
+    attr_accessor :url, :http_adapter, :dpmm, :width, :height, :index, :content_type, :font
 
     def initialize
       @url          = 'http://api.labelary.com'
@@ -33,6 +26,5 @@ module Labelary
       @content_type = 'image/png'
       @font         = ''
     end
-
   end
 end

@@ -25,7 +25,7 @@ module Labelary
     def render
       payload = font_string + @zpl
       headers = { Accept: @content_type }
-      headers['X-Rotation'] = @rotate
+      headers['X-Rotation'] = @rotate.to_s
       response = Labelary::Client.connection.post "/v1/printers/#{@dpmm}dpmm/labels/#{@width}x#{@height}/#{@index}/", payload, headers
       response.body
     end

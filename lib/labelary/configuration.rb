@@ -14,11 +14,12 @@ module Labelary
   end
 
   class Configuration
-    attr_accessor :url, :http_adapter, :dpmm, :width, :height, :index, :content_type, :font
+    attr_accessor :url, :http_adapter, :logger, :dpmm, :width, :height, :index, :content_type, :font
 
     def initialize
       @url          = 'http://api.labelary.com'
       @http_adapter = Faraday.default_adapter
+      @logger       = Logger.new(File::NULL)
       @dpmm         = nil
       @width        = nil
       @height       = nil
